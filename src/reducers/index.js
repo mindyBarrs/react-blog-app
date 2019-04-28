@@ -1,5 +1,9 @@
+/* LIBRARIES */
 import { combineReducers } from 'redux';
 
+/* REDUCERS */
+import postsReducer from './postsReducer';
+
 export default combineReducers({
-    replaceMe: () => 'I am a dummy reducer'
+    posts: postsReducer
 });
