@@ -5,6 +5,9 @@ import { connect } from 'react-redux';
 /* ACTIONS */
 import { fetchPosts } from '../../actions';
 
+/* COMPONENT */
+import UserHeader from '../UserHeader/UserHeader';
+
 class PostList extends React.Component {
     componentDidMount() {
         this.props.fetchPosts();
@@ -24,6 +27,8 @@ class PostList extends React.Component {
                             <p>
                                 { post.body }
                             </p>
+
+                            <UserHeader />
                         </div>
                     </div>
                 </div>
