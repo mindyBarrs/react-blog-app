@@ -13,8 +13,8 @@ export const fetchPosts = () => async dispatch => {
 
 /* GETTING THE USER */
 export const fetchUser = ( userId ) => async dispatch => {
-    const response = await jsonPlaceholder.get(`/user/${userId}`);
-
+    const response = await jsonPlaceholder.get(`/users/${userId}`);
+    
     dispatch({
         type: 'FETCH_USER',
         payload: response.data
