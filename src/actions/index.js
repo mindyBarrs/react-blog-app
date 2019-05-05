@@ -9,10 +9,12 @@ export const fetchPostsAndUsers = () => async (dispatch, getState) => {
     /* GETS BLOG POSTS */
     await dispatch(fetchPosts());
 
-    const userIds = _.uniq(_.map(getState().posts, 'userId'));
-
     /* GETS USERS */
-    userIds.forEach(id => dispatch(fetchUser(id)));
+    _.chain(getState().posts)
+        .map('userId')
+        .uniq()
+        .forEach(id => dispatch(fetchUser(id)))
+        .value();
 };
 
 /* GETTING THE POSTS */
